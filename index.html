@@ -34,7 +34,7 @@
   .btn.primary:hover{background:#f0b459}
   .btn svg{width:18px;height:18px;flex:none}
 
-  main{padding:48px 0 24px}
+  main.wrap{padding-top:64px;padding-bottom:24px}
   section{margin-bottom:44px}
   h2{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
   h2::before{content:"";width:18px;height:2px;background:var(--accent)}
@@ -58,6 +58,7 @@
   @media (max-width:520px){
     body{font-size:16px}
     header{padding:48px 0 44px}
+    main.wrap{padding-top:48px}
     .btn{flex:1 1 calc(50% - 10px);justify-content:center}
   }
 </style>
@@ -71,7 +72,7 @@
     <p class="role"><strong>PhD Student in Computer Science &amp; Graduate Research Assistant</strong><br>University of Illinois Chicago · Chicago, IL</p>
 
     <nav class="links">
-      <a class="btn primary" href="https://www.linkedin.com/in/niccol%C3%B2-brembilla-hpc/" target="_blank" rel="noopener">
+      <a class="btn primary" href="https://www.linkedin.com/in/brembillaniccolo/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
         LinkedIn
       </a>
@@ -94,8 +95,8 @@
 <main class="wrap">
   <section>
     <h2>About</h2>
-    <p>I'm a PhD student in Computer Science and a Graduate Research Assistant at the University of Illinois Chicago. My research sits where high-performance computing, energy and power management, and machine learning meet: getting more science per watt out of the world's largest supercomputers.</p>
-    <p>Right now I analyze production logs from Argonne's Polaris and Aurora systems to understand how workloads and user behavior change from petascale to exascale, and I'm designing carbon-aware job scheduling evaluated on a digital twin.</p>
+    <p>I'm a PhD student in Computer Science and a Graduate Research Assistant at the University of Illinois Chicago. My research is about making supercomputers more energy efficient: getting more science per watt out of the world's largest machines, using systems techniques and machine learning.</p>
+    <p>I also study how workloads and energy use evolve from petascale to exascale on Argonne's Polaris and Aurora systems, and explore carbon-aware job scheduling.</p>
   </section>
 
   <section>
@@ -103,7 +104,7 @@
     <div class="pub">
       <div class="title">Graduate Research Assistant · University of Illinois Chicago</div>
       <div class="venue">Aug 2025 – present</div>
-      <p style="margin-top:8px;font-size:15.5px">Studying how workloads, user behavior and energy use evolve from petascale to exascale on Polaris and Aurora; designing carbon-aware HPC scheduling with a digital twin.</p>
+      <p style="margin-top:8px;font-size:15.5px">Research on energy efficiency of HPC supercomputers: analyzing how workloads and energy use evolve from petascale to exascale on Polaris and Aurora, and exploring carbon-aware job scheduling.</p>
     </div>
     <div class="pub">
       <div class="title">Research Intern, HPC Power Management · Argonne National Laboratory</div>
@@ -113,21 +114,20 @@
     <div class="pub">
       <div class="title">Graduate Research Assistant · University of Illinois Chicago</div>
       <div class="venue">Jan 2025 – Jul 2025</div>
-      <p style="margin-top:8px;font-size:15.5px">Derived converse bounds for coded caching under linear coding with an LP framework; sped up the pipeline 100× with parallel Gurobi solves.</p>
+      <p style="margin-top:8px;font-size:15.5px">Obtained tighter converse bounds than previously known for coded caching under linear coding, improving on existing analyses with an LP framework using linear-rank inequalities, symmetry reduction and common-information variables, and proving the YMA scheme optimal for 4–6 users/files. Sped up the pipeline 100× with parallel Gurobi solves.</p>
     </div>
   </section>
 
   <section>
     <h2>Research interests</h2>
     <div class="chips">
-      <span class="chip">HPC systems</span>
-      <span class="chip">Power &amp; energy efficiency</span>
-      <span class="chip">GPU power management</span>
+      <span class="chip">Energy efficiency of HPC systems</span>
+      <span class="chip">GPU &amp; CPU power management</span>
       <span class="chip">Exascale computing</span>
       <span class="chip">Online learning / contextual bandits</span>
       <span class="chip">Workload characterization</span>
-      <span class="chip">Carbon-aware scheduling</span>
       <span class="chip">GEOPM · Intel Level Zero</span>
+      <span class="chip">Carbon-aware scheduling</span>
     </div>
   </section>
 
