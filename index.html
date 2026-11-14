@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niccolò Brembilla — HPC & Power Efficiency</title>
+<meta name="description" content="Niccolò Brembilla — PhD student and Graduate Research Assistant at the University of Illinois Chicago, working on HPC systems and power efficiency.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1b2d; --ink-2:#3b4658; --muted:#6b7585;
+    --bg:#f7f6f2; --card:#ffffff; --line:#e4e2db;
+    --accent:#e8a33d; --accent-ink:#8a5a12;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+  header{background:var(--ink);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--accent)}
+  .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(34px,7vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:12px 0 14px}
+  .role{font-size:18px;color:#c9d1dc}
+  .role strong{color:#fff;font-weight:600}
+
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid rgba(255,255,255,.25);color:#fff;transition:background .15s,border-color .15s}
+  .btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+  .btn.primary:hover{background:#f0b459}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  main{padding:48px 0 24px}
+  section{margin-bottom:44px}
+  h2{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  h2::before{content:"";width:18px;height:2px;background:var(--accent)}
+  p{color:var(--ink-2)}
+  p + p{margin-top:12px}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:14.5px;color:var(--ink-2)}
+
+  .pub{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .pub + .pub{margin-top:12px}
+  .pub .title{font-weight:600;color:var(--ink);line-height:1.4}
+  .pub .venue{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;color:var(--accent-ink);margin-top:6px}
+  .pub a{color:var(--accent-ink)}
+
+  .edu{display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+  .edu .deg{font-weight:600}
+  .edu .where{color:var(--muted);font-size:15px}
+
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+  @media (max-width:520px){
+    body{font-size:16px}
+    header{padding:48px 0 44px}
+    .btn{flex:1 1 calc(50% - 10px);justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">HPC Energy &amp; Power Efficiency</div>
+    <h1>Niccolò Brembilla</h1>
+    <p class="role"><strong>PhD Student in Computer Science &amp; Graduate Research Assistant</strong><br>University of Illinois Chicago · Chicago, IL</p>
+
+    <nav class="links">
+      <a class="btn primary" href="https://www.linkedin.com/in/niccol%C3%B2-brembilla-hpc/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" href="https://github.com/BrembillaNiccolo" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="cv.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+        CV
+      </a>
+      <a class="btn" href="mailto:nbrem@uic.edu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>About</h2>
+    <p>I'm a PhD student in Computer Science and a Graduate Research Assistant at the University of Illinois Chicago. My research sits where high-performance computing, energy and power management, and machine learning meet: getting more science per watt out of the world's largest supercomputers.</p>
+    <p>Right now I analyze production logs from Argonne's Polaris and Aurora systems to understand how workloads and user behavior change from petascale to exascale, and I'm designing carbon-aware job scheduling evaluated on a digital twin.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="pub">
+      <div class="title">Graduate Research Assistant · University of Illinois Chicago</div>
+      <div class="venue">Aug 2025 – present</div>
+      <p style="margin-top:8px;font-size:15.5px">Studying how workloads, user behavior and energy use evolve from petascale to exascale on Polaris and Aurora; designing carbon-aware HPC scheduling with a digital twin.</p>
+    </div>
+    <div class="pub">
+      <div class="title">Research Intern, HPC Power Management · Argonne National Laboratory</div>
+      <div class="venue">Summer 2026</div>
+      <p style="margin-top:8px;font-size:15.5px">Built a portable GEOPM power-management agent for Aurora's Xeon Max + GPU Max nodes using a nearest-neighbor + LinUCB contextual bandit, saving up to <strong>22–25% energy</strong> on large GROMACS runs within a user-set runtime bound. Built a Level Zero GPU telemetry observer and workload classifier with ~1.1% power overhead.</p>
+    </div>
+    <div class="pub">
+      <div class="title">Graduate Research Assistant · University of Illinois Chicago</div>
+      <div class="venue">Jan 2025 – Jul 2025</div>
+      <p style="margin-top:8px;font-size:15.5px">Derived converse bounds for coded caching under linear coding with an LP framework; sped up the pipeline 100× with parallel Gurobi solves.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research interests</h2>
+    <div class="chips">
+      <span class="chip">HPC systems</span>
+      <span class="chip">Power &amp; energy efficiency</span>
+      <span class="chip">GPU power management</span>
+      <span class="chip">Exascale computing</span>
+      <span class="chip">Online learning / contextual bandits</span>
+      <span class="chip">Workload characterization</span>
+      <span class="chip">Carbon-aware scheduling</span>
+      <span class="chip">GEOPM · Intel Level Zero</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <div class="pub">
+      <div class="title">From Petascale to Exascale: Evolving User Behavior on the Polaris and Aurora Systems</div>
+      <div class="venue">JSSPP 2026 · accepted</div>
+      <p style="margin-top:6px;font-size:14.5px">N. Brembilla, M. E. Papka, Z. Lan</p>
+    </div>
+    <div class="pub">
+      <div class="title">Computer-aided Characterization of Fundamental Limits of Coded Caching with Linear Coding</div>
+      <p style="margin-top:6px;font-size:14.5px;order:2">N. Brembilla, Y. Ma, P. Belotti, F. Malucelli, D. Tuninetti</p>
+      <div class="venue">IEEE ICC 2026 · <a href="https://doi.org/10.1109/ICC59461.2026.11587725" target="_blank" rel="noopener">DOI</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="deg">PhD in Computer Science</div><div class="where">2025 – present</div>
+      <div class="where">University of Illinois Chicago</div><div></div>
+    </div>
+    <div class="edu" style="margin-top:14px">
+      <div class="deg">Double M.S. in Computer Science</div><div class="where">2023 – 2025</div>
+      <div class="where">Politecnico di Milano &amp; UIC · GPA 4.0/4.0 · 110 cum laude · Best Student Award</div><div></div>
+    </div>
+    <div class="edu" style="margin-top:14px">
+      <div class="deg">B.S. in Computer Science and Engineering</div><div class="where">2020 – 2023</div>
+      <div class="where">Politecnico di Milano</div><div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Awards</h2>
+    <p>Finalist, AMD Open Hardware 2024: FPGA decoder for quantum error correction.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Niccolò Brembilla · Chicago</div>
+</footer>
+
+</body>
+</html>
