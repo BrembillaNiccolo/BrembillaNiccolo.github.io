@@ -61,6 +61,19 @@
     main.wrap{padding-top:48px}
     .btn{flex:1 1 calc(50% - 10px);justify-content:center}
   }
+  .mailform{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .mailform .row{display:flex;gap:10px}
+  .mailform input:not(.hp){flex:1;min-width:0;width:100%;font:inherit;font-size:15.5px;padding:11px 13px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+  .mailform input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .mailform .row + input, .mailform .row + .row{margin-top:10px}
+  .mailform button{margin-top:12px;width:100%;font:inherit;font-weight:600;font-size:15.5px;padding:12px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer}
+  .mailform button:hover{background:#1d2d47}
+  .mailform button:disabled{opacity:.6;cursor:default}
+  .mailform .fine{font-size:13.5px;color:var(--muted);margin-top:10px;text-align:center}
+  .mailform .status{font-size:15px;margin-top:10px;text-align:center;font-weight:500}
+  .mailform .status.ok{color:#2f7a3a} .mailform .status.err{color:#b3261e}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  @media (max-width:520px){.mailform .row{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -97,6 +110,23 @@
     <h2>About</h2>
     <p>I'm a PhD student in Computer Science and a Graduate Research Assistant at the University of Illinois Chicago. My research is about making supercomputers more energy efficient: getting more science per watt out of the world's largest machines, using systems techniques and machine learning.</p>
     <p>I also study how workloads and energy use evolve from petascale to exascale on Argonne's Polaris and Aurora systems, and explore carbon-aware job scheduling.</p>
+  </section>
+
+  <section id="get-cv">
+    <h2>Get my CV by email</h2>
+    <form class="mailform" id="cvform" novalidate>
+      <div class="row">
+        <input name="name" type="text" placeholder="Your name (optional)" autocomplete="name" maxlength="80">
+        <input name="email" type="email" placeholder="you@company.com" required autocomplete="email" maxlength="254" aria-label="Your email">
+      </div>
+      <div class="row">
+        <input name="org" type="text" placeholder="Company / institution (optional)" autocomplete="organization" maxlength="100">
+      </div>
+      <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Send me the CV </button>
+      <p class="fine">One email, sent once, only to the address you enter. No mailing list, no follow-ups.</p>
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
   </section>
 
   <section>
@@ -170,5 +200,31 @@
   <div class="wrap">© 2026 Niccolò Brembilla · Chicago</div>
 </footer>
 
+<script>
+  // Paste your Apps Script web-app URL here (ends in /exec)
+  const ENDPOINT = "PASTE_YOUR_WEB_APP_URL_HERE";
+  (function(){
+    const f = document.getElementById("cvform"), st = f.querySelector(".status"), btn = f.querySelector("button");
+    const t0 = Date.now();
+    const say = (msg, cls) => { st.textContent = msg; st.className = "status " + (cls||""); };
+    const fallback = 'Something went wrong. You can <a href="Niccolo_Brembilla_cv.pdf" target="_blank" rel="noopener">open the CV here</a> or email me at <a href="mailto:nbrem@uic.edu">nbrem@uic.edu</a>.';
+    f.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = f.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say("Please enter a valid email address.", "err"); f.email.focus(); return; }
+      btn.disabled = true; say("Sending…");
+      try {
+        const res = await fetch(ENDPOINT, { method: "POST", body: new URLSearchParams({
+          email, name: f.name.value.trim(), org: f.org.value.trim(), website: f.website.value, elapsed: String(Date.now() - t0)
+        })});
+        const data = await res.json();
+        if (data.ok) { say("Sent! Check your inbox in a minute (and the spam folder, just in case).", "ok"); f.reset(); return; }
+        if (data.msg === "busy") { st.innerHTML = 'Too many requests today. You can <a href="Niccolo_Brembilla_cv.pdf" target="_blank" rel="noopener">open the CV here</a>.'; st.className = "status err"; }
+        else say("Please enter a valid email address.", "err");
+      } catch (err) { st.innerHTML = fallback; st.className = "status err"; }
+      btn.disabled = false;
+    });
+  })();
+</script>
 </body>
 </html>
